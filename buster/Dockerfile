@@ -62,12 +62,14 @@ RUN apt-get update && \
 RUN apt-get update && \
     apt-get dist-upgrade -qy && \
     apt-get install -qy \
-	homegear \
+	homegear
+    
+RUN apt-get install -qy \
+    homegear-nodes-core \
+    homegear-nodes-extra \
     homegear-management \
     homegear-webssh \
     homegear-adminui \
-    homegear-nodes-core \
-    homegear-nodes-extra \
     homegear-homematicbidcos \
     homegear-homematicwired \
     homegear-max \
