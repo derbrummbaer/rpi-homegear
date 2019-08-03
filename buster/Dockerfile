@@ -59,24 +59,29 @@ RUN apt-get update && \
     libavahi-client-dev \
     insserv
 #   libzip4 \
-RUN apt-get update && \
-    apt-get dist-upgrade -qy && \
-    apt-get install -qy \
-	homegear
+
+RUN wget -O /tmp/InstallNightly.sh https://downloads.homegear.eu/InstallNightly.sh && bash /tmp/InstallNightly.sh
+
+# RUN apt-get update && \
+#     apt-get dist-upgrade -qy && \
+#     apt-get install -qy \
+# 	homegear
     
-RUN apt-get install -qy \
-    homegear-nodes-core \
-    homegear-nodes-extra \
-    homegear-management \
-    homegear-webssh \
-    homegear-adminui \
-    homegear-homematicbidcos \
-    homegear-homematicwired \
-    homegear-max \
-    homegear-kodi \
-    homegear-intertechno \
-    homegear-knx
-    
+# RUN apt-get install -qy \
+#     homegear-nodes-core \
+#     homegear-nodes-extra \
+#     homegear-homematicbidcos \
+#     homegear-homematicwired \
+#     homegear-max \
+#     homegear-kodi \
+#     homegear-intertechno \
+#     homegear-knx
+
+# RUN apt-get install -qy \
+#     homegear-management \
+#     homegear-webssh \
+#     homegear-adminui
+
     # homegear-influxdb \
     # homegear-insteon \
     # homegear-philipshue \
